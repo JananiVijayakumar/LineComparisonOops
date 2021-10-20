@@ -10,5 +10,11 @@ public class LineComparisonOops {
 		length2 = Math.sqrt((x4-x3)*2 + (y4-y3)*2);
         System.out.println("length of the line 1 is : " +length1);
 		System.out.println("length of the line 2 is : " +length2);
+		if (length1 > length2) {
+			System.out.println("line1 is greater than line2");
+		}
+		else {
+			System.out.println("line1 is less than line2");
+		}
     }
 }
