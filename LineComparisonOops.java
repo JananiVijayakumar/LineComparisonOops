@@ -1,20 +1,35 @@
-package com.bridgeLabz;
+package com.bridgelabz;
+
 import java.lang.*;
 public class LineComparisonOops {
+    double x1,x2,y1,y2;
+    public LineComparisonOops(double x1, double x2 , double y1 ,double y2){
+        this.x1=x1;
+        this.x2=x2;
+        this.y1=y1;
+        this.y2=y2;
+    }
+    public double calOfLength(){
+        double length = Math.sqrt(Math.pow((x2-x1),2) + Math.pow((y2-y1),2));
+        return length;
+    }
+    public static void comparison(double a , double b){
+
+        boolean EQUAL = (a == b);
+        System.out.println("Lines are Equal : "+EQUAL);
+        double line = Double.compare(a,b);
+        if (line == 1){
+            System.out.println("line1 is greater than line 2");
+        }
+        else
+            System.out.println("line1 is lesser than line 2");
+
+    }
     public static void main(String[] args) {
-        System.out.println("Welcome to the Line Comparision Computation program");
-        double x1=2,x2=5,y1=4,y2=6;
-		double x3=1,x4=6,y3=8,y4=5;
-        double length1,length2;;
-		length1 = Math.sqrt((x2-x1)*2 + (y2-y1)*2);
-		length2 = Math.sqrt((x4-x3)*2 + (y4-y3)*2);
-        System.out.println("length of the line 1 is : " +length1);
-		System.out.println("length of the line 2 is : " +length2);
-		if (length1 > length2) {
-			System.out.println("line1 is greater than line2");
-		}
-		else {
-			System.out.println("line1 is less than line2");
-		}
+        LineComparisonOops lineComparison1 = new LineComparisonOops(3,4,5,6);
+        LineComparisonOops lineComparison2 = new LineComparisonOops(9,6,7,8);
+        double lengthOfLine1 = lineComparison1.calOfLength();
+        double lengthOfLine2 = lineComparison2.calOfLength();
+        comparison(lengthOfLine1,lengthOfLine2);
     }
 }
